@@ -1,4 +1,4 @@
-/* 
+/*
 COLORS
 teal - #0fb9b1;
 frosted white - rgba(225, 225, 225, .9);
@@ -52,7 +52,7 @@ header {
 
 h1 {
 	font-size: 24px;
-	
+
 }
 
 #required-indicator {
@@ -61,12 +61,11 @@ h1 {
 
 label {
 	display: block;
-	
+
 }
 
 .radio-button-group {
 	margin-left: 10%;
-	cursor: pointer;
 	line-height: 250%;
 }
 
