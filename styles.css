@@ -61,12 +61,18 @@ h1 {
 
 label {
 	display: block;
+	cursor: pointer;
 
+}
+
+input[type="radio"] {
+	cursor: pointer;
 }
 
 .radio-button-group {
 	margin-left: 10%;
 	line-height: 250%;
+	cursor: pointer;
 }
 
 #lets-cook-button {
