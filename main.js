@@ -56,6 +56,7 @@ var mealSelector = document.querySelector("#entire-meal-selector");
 var letsCookButton = document.querySelector("#lets-cook-button");
 var cookpotImage = document.querySelector("#cookpot");
 var outputAnswer = document.querySelector("#answer");
+var randomSuggestion = document.querySelector("#random-suggestion");
 
 
 /* Event Listeners */
@@ -63,7 +64,7 @@ window.addEventListener("load", showDefaultImage);
 sideSelector.addEventListener("click", getSide);
 mainSelector.addEventListener("click", getMain);
 dessertSelector.addEventListener("click", getDessert);
-// mealSelector.addEventListener("click", getMeal);
+mealSelector.addEventListener("click", getMeal);
 letsCookButton.addEventListener("click", swapContent);
 
 
@@ -80,22 +81,31 @@ function showDefaultImage() {
 function getSide() {
 	var sidesIndex = getRandomIndex(sides);
 	var randomSide = sides[sidesIndex];
-	document.getElementById("random-item").innerHTML = `${randomSide}!`;
+	document.getElementById("random-suggestion").innerHTML = `${randomSide}!`;
 }
 
 function getMain() {
 	var mainsIndex = getRandomIndex(mains);
 	var randomMain = mains[mainsIndex];
-	document.getElementById("random-item").innerHTML = `${randomMain}!`;
+	document.getElementById("random-suggestion").innerHTML = `${randomMain}!`;
 }
 
 function getDessert() {
 	var dessertsIndex = getRandomIndex(desserts);
 	var randomDessert = desserts[dessertsIndex];
-	document.getElementById("random-item").innerHTML = `${randomDessert}!`;
+	document.getElementById("random-suggestion").innerHTML = `${randomDessert}!`;
 }
 
-// TODO: Entire meal functionality
+function getMeal() {
+	var sidesIndex = getRandomIndex(sides);
+	var randomSide = sides[sidesIndex];
+	var mainsIndex = getRandomIndex(mains);
+	var randomMain = mains[mainsIndex];
+	var dessertsIndex = getRandomIndex(desserts);
+	var randomDessert = desserts[dessertsIndex];
+	document.getElementById("random-suggestion").innerHTML = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`;
+}
+
 
 function swapContent() {
 	cookpotImage.classList.add("hidden");
