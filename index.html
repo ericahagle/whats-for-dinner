@@ -7,24 +7,28 @@
   </head>
   <body>
     <header>
-      <h2 id="whats-for-dinner">What's for Dinner?</h2>
+      <h3 id="whats-for-dinner">What's for Dinner?</h3>
     </header>
-    <div id="user-input-box">
+    <section id="user-input-box">
       <div id="question">
-        <h1>What are you looking for?</h1><h1 id="required-indicator">*</h1>
+        <h2>What are you looking for?</h2><h2 id="required-indicator">*</h2>
       </div>
       <div class="radio-button-group">
-        <label for="side"><input type="radio" name="radio" id="side"/>Side</label>
-        <label for="main-dish"><input type="radio" name="radio" id="main-dish"/>Main Dish</label>
-        <label for="dessert"><input type="radio" name="radio" id="dessert"/>Dessert</label>
-        <label for="entire-meal"><input type="radio" name="radio" id="entire-meal"/>Entire Meal</label>
+        <label for="side-selector"><input type="radio" name="radio" id="side-selector"/>Side</label>
+        <label for="main-dish-selector"><input type="radio" name="radio" id="main-dish-selector"/>Main Dish</label>
+        <label for="dessert-selector"><input type="radio" name="radio" id="dessert-selector"/>Dessert</label>
+        <label for="entire-meal-selector"><input type="radio" name="radio" id="entire-meal-selector"/>Entire Meal</label>
       </div>
         <button id="lets-cook-button">LET'S COOK!</button>
       </ul>
-    </div>
-    <div id="user-output-box">
+    </section>
+    <section id="user-output-box">
       <img id="cookpot" src="assets/cookpot.svg"/>
-    </div>
+			<div id="answer">
+				<h4>You should make:</h4>
+				<h1 id="random-item"></h1>
+			</div>
+    </section>
   </body>
   <script type="text/javascript" src="main.js"></script>
 </html>
