@@ -129,8 +129,12 @@ h4 {
 	display: block;
 	justify-self: center;
 	align-self: center;
+	text-align: center;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
 h1 {
 	font-size: 2rem;
+	text-align: center;
 }
