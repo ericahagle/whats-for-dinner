@@ -57,11 +57,12 @@ var mealSelector = document.querySelector("#entire-meal-selector");
 var letsCookButton = document.querySelector("#lets-cook-button");
 var cookpotImage = document.querySelector("#cookpot");
 var outputAnswer = document.querySelector("#answer");
-var randomSuggestion = document.querySelector("#random-suggestion");
+var randomSuggestionText = document.querySelector("#random-suggestion");
 
 
 /* Event Listeners */
 window.addEventListener("load", showDefaultImage);
+window.addEventListener("load", disableButtonOnLoad);
 sideSelector.addEventListener("click", getSide);
 mainSelector.addEventListener("click", getMain);
 dessertSelector.addEventListener("click", getDessert);
@@ -79,22 +80,29 @@ function showDefaultImage() {
 	outputAnswer.classList.add("hidden");
 }
 
+function disableButtonOnLoad() {
+	document.getElementById("lets-cook-button").disabled = true;
+}
+
 function getSide() {
 	var sidesIndex = getRandomIndex(sides);
 	var randomSide = sides[sidesIndex];
 	randomSuggestion = `${randomSide}!`;
+	document.getElementById("lets-cook-button").disabled = false;
 }
 
 function getMain() {
 	var mainsIndex = getRandomIndex(mains);
 	var randomMain = mains[mainsIndex];
 	randomSuggestion = `${randomMain}!`;
+	document.getElementById("lets-cook-button").disabled = false;
 }
 
 function getDessert() {
 	var dessertsIndex = getRandomIndex(desserts);
 	var randomDessert = desserts[dessertsIndex];
 	randomSuggestion = `${randomDessert}!`;
+	document.getElementById("lets-cook-button").disabled = false;
 }
 
 function getMeal() {
@@ -105,10 +113,19 @@ function getMeal() {
 	var dessertsIndex = getRandomIndex(desserts);
 	var randomDessert = desserts[dessertsIndex];
 	randomSuggestion = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`;
+	document.getElementById("lets-cook-button").disabled = false;
 }
 
 function swapContent() {
 	cookpotImage.classList.add("hidden");
 	outputAnswer.classList.remove("hidden");
 	document.getElementById("random-suggestion").innerHTML = randomSuggestion;
+	if (randomSuggestion.includes("with a side")) {
+		randomSuggestionText.classList.add("smaller-text");
+		randomSuggestionText.classList.remove("larger-text");
+	} else {
+		randomSuggestionText.classList.remove("smaller-text");
+		randomSuggestionText.classList.add("larger-text");
+	}
+	document.getElementById("lets-cook-button").disabled = true;
 }
