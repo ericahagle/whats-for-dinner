@@ -55,7 +55,7 @@ header {
 }
 
 h2 {
-	font-size: 24px;
+	font-size: x-large;
 
 }
 
@@ -92,6 +92,14 @@ input[type="radio"] {
 	padding-right: 8%;
 }
 
+#lets-cook-button:hover {
+	background-color: #02a5b1;
+}
+
+#lets-cook-button:active {
+	background-color: #01636a;
+}
+
 #user-output-box {
   background-color: rgba(225, 225, 225, .9);
 	display: flex;
@@ -109,12 +117,20 @@ input[type="radio"] {
 	height: 30%;
 }
 
-/* TODO: Get h4 to center properly; probably need to do some refactoring with flexbox/grid */
+#answer {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	padding: 10%;
+}
 
 h4 {
 	font-style: italic;
+	display: block;
+	justify-self: center;
+	align-self: center;
 }
 
 h1 {
-	font-size: 36px;
+	font-size: 2rem;
 }

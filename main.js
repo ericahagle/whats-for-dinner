@@ -46,6 +46,7 @@ var desserts = [
 	"Croissants",
 	"Eclairs"
 ];
+var randomSuggestion;
 
 
 /* Query Selectors */
@@ -56,6 +57,7 @@ var mealSelector = document.querySelector("#entire-meal-selector");
 var letsCookButton = document.querySelector("#lets-cook-button");
 var cookpotImage = document.querySelector("#cookpot");
 var outputAnswer = document.querySelector("#answer");
+var randomSuggestion = document.querySelector("#random-suggestion");
 
 
 /* Event Listeners */
@@ -63,7 +65,7 @@ window.addEventListener("load", showDefaultImage);
 sideSelector.addEventListener("click", getSide);
 mainSelector.addEventListener("click", getMain);
 dessertSelector.addEventListener("click", getDessert);
-// mealSelector.addEventListener("click", getMeal);
+mealSelector.addEventListener("click", getMeal);
 letsCookButton.addEventListener("click", swapContent);
 
 
@@ -80,24 +82,33 @@ function showDefaultImage() {
 function getSide() {
 	var sidesIndex = getRandomIndex(sides);
 	var randomSide = sides[sidesIndex];
-	document.getElementById("random-item").innerHTML = `${randomSide}!`;
+	randomSuggestion = `${randomSide}!`;
 }
 
 function getMain() {
 	var mainsIndex = getRandomIndex(mains);
 	var randomMain = mains[mainsIndex];
-	document.getElementById("random-item").innerHTML = `${randomMain}!`;
+	randomSuggestion = `${randomMain}!`;
 }
 
 function getDessert() {
 	var dessertsIndex = getRandomIndex(desserts);
 	var randomDessert = desserts[dessertsIndex];
-	document.getElementById("random-item").innerHTML = `${randomDessert}!`;
+	randomSuggestion = `${randomDessert}!`;
 }
 
-// TODO: Entire meal functionality
+function getMeal() {
+	var sidesIndex = getRandomIndex(sides);
+	var randomSide = sides[sidesIndex];
+	var mainsIndex = getRandomIndex(mains);
+	var randomMain = mains[mainsIndex];
+	var dessertsIndex = getRandomIndex(desserts);
+	var randomDessert = desserts[dessertsIndex];
+	randomSuggestion = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`;
+}
 
 function swapContent() {
 	cookpotImage.classList.add("hidden");
 	outputAnswer.classList.remove("hidden");
+	document.getElementById("random-suggestion").innerHTML = randomSuggestion;
 }
