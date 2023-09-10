@@ -12,6 +12,10 @@ html {
 	font-family: 'Roboto', sans-serif;
 }
 
+.hidden {
+	display: none!important;
+}
+
 body {
   background-image: url(assets/burger-friends.jpg);
 	height: 100%;
@@ -23,7 +27,7 @@ body {
 
 header {
   background-color: #0fb9b1;
-	margin-top: -15px;
+	margin-top: -20px;
 	line-height: 300%;
 }
 
@@ -50,7 +54,7 @@ header {
 	display: inline-flex;
 }
 
-h1 {
+h2 {
 	font-size: 24px;
 
 }
@@ -61,12 +65,18 @@ h1 {
 
 label {
 	display: block;
+	cursor: pointer;
 
+}
+
+input[type="radio"] {
+	cursor: pointer;
 }
 
 .radio-button-group {
 	margin-left: 10%;
 	line-height: 250%;
+	cursor: pointer;
 }
 
 #lets-cook-button {
@@ -97,4 +107,14 @@ label {
 #cookpot {
 	width: 30%;
 	height: 30%;
+}
+
+/* TODO: Get h4 to center properly; probably need to do some refactoring with flexbox/grid */
+
+h4 {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 36px;
 }
