@@ -46,6 +46,7 @@ var desserts = [
 	"Croissants",
 	"Eclairs"
 ];
+var randomSuggestion;
 
 
 /* Query Selectors */
@@ -81,19 +82,19 @@ function showDefaultImage() {
 function getSide() {
 	var sidesIndex = getRandomIndex(sides);
 	var randomSide = sides[sidesIndex];
-	document.getElementById("random-suggestion").innerHTML = `${randomSide}!`;
+	randomSuggestion = `${randomSide}!`;
 }
 
 function getMain() {
 	var mainsIndex = getRandomIndex(mains);
 	var randomMain = mains[mainsIndex];
-	document.getElementById("random-suggestion").innerHTML = `${randomMain}!`;
+	randomSuggestion = `${randomMain}!`;
 }
 
 function getDessert() {
 	var dessertsIndex = getRandomIndex(desserts);
 	var randomDessert = desserts[dessertsIndex];
-	document.getElementById("random-suggestion").innerHTML = `${randomDessert}!`;
+	randomSuggestion = `${randomDessert}!`;
 }
 
 function getMeal() {
@@ -103,11 +104,11 @@ function getMeal() {
 	var randomMain = mains[mainsIndex];
 	var dessertsIndex = getRandomIndex(desserts);
 	var randomDessert = desserts[dessertsIndex];
-	document.getElementById("random-suggestion").innerHTML = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`;
+	randomSuggestion = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`;
 }
-
 
 function swapContent() {
 	cookpotImage.classList.add("hidden");
 	outputAnswer.classList.remove("hidden");
+	document.getElementById("random-suggestion").innerHTML = randomSuggestion;
 }
