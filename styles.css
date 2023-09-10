@@ -100,6 +100,10 @@ input[type="radio"] {
 	background-color: #01636a;
 }
 
+#lets-cook-button:disabled {
+	background-color: #95a5a6;
+}
+
 #user-output-box {
   background-color: rgba(225, 225, 225, .9);
 	display: flex;
@@ -131,10 +135,20 @@ h4 {
 	align-self: center;
 	text-align: center;
 	margin-bottom: 0;
-	margin-top: 0;
+	margin-top: 0.5;
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 	text-align: center;
+	margin-top: 0;
+}
+
+.smaller-text {
+	font-size: 1.75rem;
+	margin-top: 5%;
+}
+
+.larger-text {
+	font-size: 2.5rem;
 }
