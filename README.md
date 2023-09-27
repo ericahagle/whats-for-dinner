@@ -15,6 +15,8 @@ With this application, all that hemming and hawing is rendered unnecessary! All 
 3. `cd` into the project
 4. `open index.html` to launch the app in the user's default web browser
 
+The app can also be accessed live here: https://ericahagle.github.io/whats-for-dinner/
+
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
